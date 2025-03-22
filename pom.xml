@@ -17,6 +17,9 @@
   </dependencies>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Add Java version properties -->
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
   </properties>
   <build>
     <pluginManagement>
@@ -29,6 +32,16 @@
       </plugins>
     </pluginManagement>
     <plugins>
+      <!-- Configure maven-compiler-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>${maven.compiler.source}</source> <!-- Use Java 21 -->
+          <target>${maven.compiler.target}</target> <!-- Use Java 21 -->
+        </configuration>
+      </plugin>
       <plugin>
         <!-- Build an executable JAR -->
         <groupId>org.apache.maven.plugins</groupId>
